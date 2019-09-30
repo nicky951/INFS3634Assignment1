@@ -5,7 +5,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="fill_parent"
-        android:layout_height="3dp"
-        android:background="#646464">
+        android:layout_height="1dp"
+        android:background="#B8B8B8"
+        android:paddingStart="40dp"
+        android:paddingEnd="20dp">
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
