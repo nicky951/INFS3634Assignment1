@@ -843,6 +843,7 @@ id standard
 id start
 id submenuarrow
 id submit_area
+id switchTime
 id sydneycity
 id sydneytime
 id tabMode
