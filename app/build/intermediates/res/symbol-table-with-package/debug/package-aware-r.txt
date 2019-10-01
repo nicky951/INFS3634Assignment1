@@ -919,6 +919,7 @@ layout auckland_time
 layout custom_dialog
 layout divider
 layout dubai_time
+layout header
 layout newyork_time
 layout notification_action
 layout notification_action_tombstone

@@ -25,15 +25,8 @@
         android:paddingEnd="20dp"
         android:paddingBottom="20dp">
 
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/switchTime"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-        </Switch>
-
-        <include layout="@layout/sydney_time" />
+        <include layout="@layout/header"/>
+        <include layout="@layout/sydney_time"/>
         <include layout="@layout/divider"/>
         <include layout="@layout/tokyo_time"/>
         <include layout="@layout/divider"/>
