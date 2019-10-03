@@ -1,0 +1,4 @@
+#Fri Oct 04 00:28:43 AEST 2019
+base.0=/Users/nicholasliang/Desktop/Android/INFS3634Assignment1/app/build/intermediates/dex/release/mergeDexRelease/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
