@@ -1,7 +1,6 @@
 package com.example.infs3634assignment1;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Switch;
@@ -12,7 +11,7 @@ import java.util.TimeZone;
 
 public class MainActivity extends AppCompatActivity {
 
-    //Switch
+    //Switch to change time between AM to PM
     Switch changeTime;
 
     //Sydney Time
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     int hourOfDaysNew = n.get(Calendar.HOUR_OF_DAY);
     String newyorkTimeString = hourOfDaysNew + ":" + String.format(Locale.ENGLISH, "%02d", n.get(Calendar.MINUTE));
 
-    //Indicate whether AM or PM
+    //Indicate whether AM or PM after change
     boolean amS;
     boolean amT;
     boolean amA;
@@ -62,11 +61,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Load 24 hour time on boot up
         start();
+
+        //Logic to utilise AM-PM Switch
         changeTime = findViewById(R.id.switchTime);
-
-        changeTime.setOnLongClickListener(null);
-
         changeTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,12 +77,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 
+    //24 Hour Display Logic
     public void twentyFourHour() {
-
         if (!amS) {
             hourOfDaysSyd = hourOfDaysSyd + 12;
             String sydneyTimeString = hourOfDaysSyd + ":" + String.format(Locale.ENGLISH, "%02d", s.get(Calendar.MINUTE));
@@ -130,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //Display 12 Hour time from 24 Hour logic
     public void twelveHour() {
         if (hourOfDaysSyd > 12) {
             amS = false;
@@ -227,8 +225,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //Load daa on app start
     public void start(){
-
         sydneyTime = findViewById(R.id.sydneytime);
         sydneyTime.setText(sydneyTimeString);
 
@@ -245,8 +243,11 @@ public class MainActivity extends AppCompatActivity {
         newyorkTime.setText(newyorkTimeString);
     }
 
+    //Refresh app button logic
     public void appRefresh(View v){
         finish();
+
+        //Remove slide transition
         overridePendingTransition(0, 0);
         startActivity(getIntent());
         overridePendingTransition(0, 0);
