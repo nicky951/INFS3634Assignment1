@@ -3,6 +3,8 @@ package com.example.infs3634assignment1;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -60,6 +62,91 @@ public class MainActivity extends AppCompatActivity {
                     twentyFourHour();
                 } else if (!changeTime.isChecked()) {
                     twelveHour();
+                }
+            }
+        });
+
+        CheckBox sydneyCheck;
+        sydneyCheck = findViewById(R.id.sydneyCheck);
+
+        sydneyCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                View sydneyView = findViewById(R.id.sydneyView);
+                if(isChecked){
+                    sydneyView.setVisibility(View.INVISIBLE);
+                    sydneyView.setVisibility(View.GONE);
+                } else if(!isChecked){
+                    sydneyView.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        CheckBox tokyoCheck;
+        tokyoCheck = findViewById(R.id.tokyoCheck);
+
+        tokyoCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                View tokyoView = findViewById(R.id.tokyoView);
+                if(isChecked){
+                    tokyoView.setVisibility(View.INVISIBLE);
+                    tokyoView.setVisibility(View.GONE);
+                } else if(!isChecked){
+                    tokyoView.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        CheckBox aucklandCheck;
+        aucklandCheck = findViewById(R.id.aucklandCheck);
+
+        aucklandCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                View aucklandView = findViewById(R.id.aucklandView);
+                if(isChecked){
+                    aucklandView.setVisibility(View.INVISIBLE);
+                    aucklandView.setVisibility(View.GONE);
+                } else if(!isChecked){
+                    aucklandView.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        CheckBox dubaiCheck;
+        dubaiCheck = findViewById(R.id.dubaiCheck);
+
+        dubaiCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                View dubaiView = findViewById(R.id.dubaiView);
+                if(isChecked){
+                    dubaiView.setVisibility(View.INVISIBLE);
+                    dubaiView.setVisibility(View.GONE);
+                } else if(!isChecked){
+                    dubaiView.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        CheckBox newyorkCheck;
+        newyorkCheck = findViewById(R.id.newyorkCheck);
+
+        newyorkCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                View newyorkView = findViewById(R.id.newyorkView);
+                if(isChecked){
+                    newyorkView.setVisibility(View.INVISIBLE);
+                    newyorkView.setVisibility(View.GONE);
+                } else if(!isChecked){
+                    newyorkView.setVisibility(View.VISIBLE);
                 }
             }
         });

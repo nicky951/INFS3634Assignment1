@@ -26,16 +26,12 @@
         android:paddingBottom="20dp">
 
         <include layout="@layout/header"/>
+        <include layout="@layout/checkbox"/>
         <include layout="@layout/sydney_time"/>
-        <include layout="@layout/divider"/>
         <include layout="@layout/tokyo_time"/>
-        <include layout="@layout/divider"/>
         <include layout="@layout/auckland_time"/>
-        <include layout="@layout/divider"/>
         <include layout="@layout/dubai_time"/>
-        <include layout="@layout/divider"/>
         <include layout="@layout/newyork_time"/>
-        <include layout="@layout/divider"/>
 
     </LinearLayout>
 </ScrollView>

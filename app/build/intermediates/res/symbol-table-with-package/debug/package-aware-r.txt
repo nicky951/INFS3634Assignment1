@@ -742,6 +742,8 @@ id add
 id alertTitle
 id always
 id async
+id aucklandCheck
+id aucklandView
 id aucklandcity
 id aucklandtime
 id barrier
@@ -765,6 +767,8 @@ id dialog_button
 id dimensions
 id direct
 id disableHome
+id dubaiCheck
+id dubaiView
 id dubaicity
 id dubaitime
 id edit_query
@@ -793,6 +797,8 @@ id message
 id middle
 id multiply
 id never
+id newyorkCheck
+id newyorkView
 id newyorkcity
 id newyorktime
 id none
@@ -844,6 +850,8 @@ id start
 id submenuarrow
 id submit_area
 id switchTime
+id sydneyCheck
+id sydneyView
 id sydneycity
 id sydneytime
 id tabMode
@@ -863,6 +871,8 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id tokyoCheck
+id tokyoView
 id tokyocity
 id tokyotime
 id top
@@ -916,6 +926,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
 layout auckland_time
+layout checkbox
 layout custom_dialog
 layout divider
 layout dubai_time

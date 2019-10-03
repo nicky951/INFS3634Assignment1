@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <CheckBox
+        android:id="@+id/sydneyCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sydney"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/tokyoCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tokyo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/sydneyCheck">
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/aucklandCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Auckland"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tokyoCheck">
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/dubaiCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dubai"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/aucklandCheck">
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/newyorkCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New York"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/dubaiCheck">
+    </CheckBox>
+
+</LinearLayout>
