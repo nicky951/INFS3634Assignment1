@@ -7,7 +7,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -21,36 +20,31 @@ public class MainActivity extends AppCompatActivity {
 
     //Sydney Time
     private TextView sydneyTime;
-    TimeZone sydney = TimeZone.getTimeZone("Australia/Sydney");
-    Calendar s = Calendar.getInstance(sydney);
+    TimeZone sydney;
 
     //Japan Time
     private TextView tokyoTime;
-    TimeZone tokyo = TimeZone.getTimeZone("Asia/Tokyo");
-    Calendar t = Calendar.getInstance(tokyo);
+    TimeZone tokyo;
 
     //Auckland Time
     private TextView aucklandTime;
-    TimeZone auckland = TimeZone.getTimeZone("Pacific/Auckland");
-    Calendar a = Calendar.getInstance(auckland);
+    TimeZone auckland;
 
     //Dubai Time
     private TextView dubaiTime;
-    TimeZone dubai = TimeZone.getTimeZone("Asia/Dubai");
-    Calendar d = Calendar.getInstance(dubai);
+    TimeZone dubai;
 
     //New York Time
     private TextView newyorkTime;
-    TimeZone newyork = TimeZone.getTimeZone("America/New_York");
-    Calendar n = Calendar.getInstance(newyork);
+    TimeZone newyork;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Load 24 hour time on boot up
-        start();
+        //Default 24 hour on boot up
+        twelveHour();
 
         //Logic to utilise AM-PM Switch
         changeTime = findViewById(R.id.switchTime);
@@ -62,10 +56,11 @@ public class MainActivity extends AppCompatActivity {
                     twentyFourHour();
                 } else if (!changeTime.isChecked()) {
                     twelveHour();
-                }
+;               }
             }
         });
 
+        //The following is the checkbox logic to make views disappear
         CheckBox sydneyCheck;
         sydneyCheck = findViewById(R.id.sydneyCheck);
 
@@ -155,107 +150,89 @@ public class MainActivity extends AppCompatActivity {
     //24 Hour Display Logic
     public void twentyFourHour() {
 
+        //Date format 24 hour
         DateFormat twelveHour = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
+
+        setTimeZone();
+
+        Calendar s = Calendar.getInstance(sydney);
         twelveHour.setTimeZone(sydney);
 
         String timeS = twelveHour.format(s.getTime());
         sydneyTime = findViewById(R.id.sydneytime);
         sydneyTime.setText(timeS);
 
+        Calendar t = Calendar.getInstance(tokyo);
         twelveHour.setTimeZone(tokyo);
 
         String timeT = twelveHour.format(t.getTime());
         tokyoTime = findViewById(R.id.tokyotime);
         tokyoTime.setText(timeT);
 
+        Calendar a = Calendar.getInstance(auckland);
         twelveHour.setTimeZone(auckland);
 
         String timeA = twelveHour.format(a.getTime());
         aucklandTime = findViewById(R.id.aucklandtime);
         aucklandTime.setText(timeA);
 
+        Calendar d = Calendar.getInstance(dubai);
         twelveHour.setTimeZone(dubai);
 
         String timeD = twelveHour.format(d.getTime());
         dubaiTime = findViewById(R.id.dubaitime);
         dubaiTime.setText(timeD);
 
+        Calendar n = Calendar.getInstance(newyork);
         twelveHour.setTimeZone(newyork);
 
         String timeN = twelveHour.format(n.getTime());
         newyorkTime = findViewById(R.id.newyorktime);
         newyorkTime.setText(timeN);
-
     }
 
-    //Display 12 Hour time from 24 Hour logic
+    //Display 12 hour display logic
     public void twelveHour() {
 
+        //Date format 12 hour
         DateFormat twelveHour = new SimpleDateFormat("hh:mm aa", Locale.ENGLISH);
+
+        setTimeZone();
+
+        Calendar s = Calendar.getInstance(sydney);
         twelveHour.setTimeZone(sydney);
 
         String timeS = twelveHour.format(s.getTime());
         sydneyTime = findViewById(R.id.sydneytime);
         sydneyTime.setText(timeS);
 
+        Calendar t = Calendar.getInstance(tokyo);
         twelveHour.setTimeZone(tokyo);
 
         String timeT = twelveHour.format(t.getTime());
         tokyoTime = findViewById(R.id.tokyotime);
         tokyoTime.setText(timeT);
 
+        Calendar a = Calendar.getInstance(auckland);
         twelveHour.setTimeZone(auckland);
 
         String timeA = twelveHour.format(a.getTime());
         aucklandTime = findViewById(R.id.aucklandtime);
         aucklandTime.setText(timeA);
 
+        Calendar d = Calendar.getInstance(dubai);
         twelveHour.setTimeZone(dubai);
 
         String timeD = twelveHour.format(d.getTime());
         dubaiTime = findViewById(R.id.dubaitime);
         dubaiTime.setText(timeD);
 
+        Calendar n = Calendar.getInstance(newyork);
         twelveHour.setTimeZone(newyork);
 
         String timeN = twelveHour.format(n.getTime());
         newyorkTime = findViewById(R.id.newyorktime);
         newyorkTime.setText(timeN);
-    }
-
-    //Load data on app start
-    public void start(){
-        DateFormat twelveHour = new SimpleDateFormat("hh:mm aa", Locale.ENGLISH);
-        twelveHour.setTimeZone(sydney);
-
-        String timeS = twelveHour.format(s.getTime());
-        sydneyTime = findViewById(R.id.sydneytime);
-        sydneyTime.setText(timeS);
-
-        twelveHour.setTimeZone(tokyo);
-
-        String timeT = twelveHour.format(t.getTime());
-        tokyoTime = findViewById(R.id.tokyotime);
-        tokyoTime.setText(timeT);
-
-        twelveHour.setTimeZone(auckland);
-
-        String timeA = twelveHour.format(a.getTime());
-        aucklandTime = findViewById(R.id.aucklandtime);
-        aucklandTime.setText(timeA);
-
-        twelveHour.setTimeZone(dubai);
-
-        String timeD = twelveHour.format(d.getTime());
-        dubaiTime = findViewById(R.id.dubaitime);
-        dubaiTime.setText(timeD);
-
-        twelveHour.setTimeZone(newyork);
-
-        String timeN = twelveHour.format(n.getTime());
-        newyorkTime = findViewById(R.id.newyorktime);
-        newyorkTime.setText(timeN);
-
     }
 
     //Refresh app button logic
@@ -266,5 +243,14 @@ public class MainActivity extends AppCompatActivity {
         overridePendingTransition(0, 0);
         startActivity(getIntent());
         overridePendingTransition(0, 0);
+    }
+
+    //Reset Timezone values: can be used for updates.
+    public void setTimeZone() {
+        sydney = TimeZone.getTimeZone("Australia/Sydney");
+        tokyo = TimeZone.getTimeZone("Asia/Tokyo");
+        auckland = TimeZone.getTimeZone("Pacific/Auckland");
+        dubai = TimeZone.getTimeZone("Asia/Dubai");
+        newyork = TimeZone.getTimeZone("America/New_York");
     }
 }
